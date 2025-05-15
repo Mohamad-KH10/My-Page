@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr"> <!-- Dili Türkçe olarak ayarladım -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda Sayfası</title>
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/index.css">
+    <link rel="stylesheet" href="./Css/Navbar.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white fixed-top">
+        <a class="navbar-brand center" href="index.html">Kişisel Web Sayfam</a>
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <!-- Mobil cihazlar için buton ekledim -->
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-active" href="login.html" target="_self">Login</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="index.html">Hakkımda</a> <!-- Text color düzeltilmiş -->
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="ozgecmis.html">Özgeçmiş</a> <!-- 'text-active' yerine 'text-white' kullandım -->
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="sehrim.html">Şehrim</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="mirasimiz.html">Mirasımız</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="ilgialanlarim.html">İlgi Alanlarım</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="iletisim.html">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hakkımda Sayfası -->
+    <section class="p-5 text-center hakkimda"> 
+        <div class="container">
+            <h2 class="mb-auto font-weight-bold title">Hakkımda</h2>
+            <hr>
+            <br>
+            <p class="content">
+                Sayfama Hoş Geldiniz, ben Mohamad Khateeb. 2004 yılında Suriye'de doğdum. 2015'e kadar yaşadığımız zorluklarla başa çıkmaya çalıştık. Babam, Fransızca öğretmeniydi ve aynı zamanda lisenin müdürüydü. Ancak savaş nedeniyle Türkiye'ye göç etme kararı aldık, okulumuz için. Türkiye'ye geldikten sonra ortaokul ve lise eğitimimi tamamladım.
+
+                Yazılım mühendisliği bölümüne kabul edildim, ancak babamın vefatı nedeniyle okulu bırakmak zorunda kaldım. Trabzon'da turizm sektöründe çalışmaya başladım. Bir süre sonra Karadeniz Teknik Üniversitesi'nde bilgisayar mühendisliğine kabul edildim ve 1 yıl boyunca İngilizce eğitimi aldım.
+                
+                Ancak annem ve kardeşimi yalnız bırakmamak için Sakarya'ya taşındım ve okulumu oraya transfer ettim. Eğitimime devam edebilmek ve aileme destek olabilmek için elimden geleni yaptım.
+                
+                Bu süreçte yaşadığım deneyimlerle büyüdüm ve hayatımın her aşamasında kendimi geliştirmeye çalıştım. Ailem için her zaman bir destek olmayı ve hayallerimi gerçekleştirmek için çaba harcamayı amaçlıyorum. Şimdi, geleceğe umutla bakıyor ve yeni fırsatlar için hazırım.
+              </p>
+        
+            <br>
+            <p class="content">
+               <h4>Hobilerim</h4>
+               Küçükken, futbol ve yüzme eğlenceliydi. Büyüdükçe fotoğraf çekmeye ilgi duydum. Şimdi, yalnız başıma zaman geçirdiğimde yemek yapmaktan hoşlanıyorum. Yazları Trabzon'da çalışırken otelimizde köpeğimle oynamayı seviyorum. 
+            </p>
+
+            
+            
+            
+        
+        
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".navbar-toggler").addEventListener("click", function () {
+                document.querySelector(".navbar-collapse").classList.toggle("show");
+            });
+        });
+    </script>
+</body>
+</html>
