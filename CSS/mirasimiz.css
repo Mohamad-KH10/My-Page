@@ -1,0 +1,20 @@
+.img-wrapper {
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+}
+
+.img-wrapper img {
+    width: 30%;
+    height: 250px;
+}
+
+@media only screen and (max-width: 800px) {
+    .img-wrapper {
+        flex-direction: column;
+    }
+    .img-wrapper img {
+        width: 80%;
+        margin: 1rem auto;
+    }
+}

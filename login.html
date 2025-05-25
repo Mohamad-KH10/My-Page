@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGİN SAYFASI </title>
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/Navbar.css">
+    <link rel="stylesheet" href="./Css/login.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white fixed-top">
+        <a class="navbar-brand center " href="index.html"> Kişisel Web Sayfam</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span> <!-- Hamburger menü simgesi -->
+        </button>
+        <div class=container-fluid>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-active" href="login.html" target="_self">Login</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white  " href="index.html" target="_self">Hakkımda</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="ozgecmis.html" target="_self">Özgeçmiş</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="sehrim.html " target="_self">Şehrim</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href=" mirasimiz.html" target="_self">Mirasımız</a>
+                    </li>
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="ilgialanlarim.html" target="_self">İlgi Alanlarım</a>
+                    </li>
+
+                    <li class="nav-item px-2">
+                        <a class="nav-link text-white" href="iletisim.html" target="_self">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-muted">
+        <form action="login.php" method="POST" id="login" novalidate=" name="login">
+            <h1 style="text-align: center;">Login</h1>
+            <br>
+            <p><b>Kullanıcı Adı</b>
+                <input id="id" name="id" class="form-control  px-3 py-3 shadow" type="email" required placeholder="kullanıcı adınızı giriniz">
+            </p>
+            <br>
+            <p><b>Şifre</b>
+                <input id="sifre" name="sifre" class="form-control px-3 py-3 shadow" type="password" required placeholder="şifrenizi giriniz">
+            </p>
+            <br>
+            <p style="text-align: center;">
+                <button type="button" onclick="kontrol()" class="btn btn-success loginBtn">Giriş Yap </button>
+            </p>
+        </form>
+        <footer>
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        Mohamad Khateeb
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    </div>
+
+    <script>// Giriş formu doğrulaması
+        function kontrol() {
+            var loginBtn = document.querySelector(".loginBtn");
+            var kullanici_adi = document.getElementById("id").value;
+            var sifre = document.getElementById("sifre").value;
+            if (sifre == null || sifre == "" || kullanici_adi == null || kullanici_adi == "") {
+                alert("Bütün Alanları Doldurmak Zorunludur.!");
+            } else {
+                loginBtn.setAttribute('type', 'submit')
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".navbar-toggler").addEventListener("click", function () {
+                document.querySelector(".navbar-collapse").classList.toggle("show");
+            });
+        });
+    </script>
+</body>
+
+</html>

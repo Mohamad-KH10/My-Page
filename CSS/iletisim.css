@@ -1,0 +1,33 @@
+#form {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 500px !important;
+    padding: 10px 15px !important;
+    resize: none;
+    outline: 0;
+    border: 1px solid #ced4da;
+}
+
+.form-group select {
+    height: 45px !important;
+}
+
+.gender {
+    display: flex !important;
+    width: 300px !important;
+}
+
+.gender input {
+    width: 13px !important;
+    height: 13px !important;
+    margin: 6px 3px 0 19px !important;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}

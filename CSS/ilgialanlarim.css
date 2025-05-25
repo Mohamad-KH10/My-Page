@@ -1,0 +1,33 @@
+.BbList {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.BbList .movie {
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.BbList .movie img {
+    width: 320px;
+    height: 450px;
+}
+@media (max-width: 768px) {
+    .nav-link:nth-child(odd) {
+        background-color: #28a745;
+        color: #fff !important;
+        border-bottom: 1px solid #000;
+    }
+
+    .nav-link:nth-child(even) {
+        background-color: #ffc107;
+        color: #000 !important;
+        border-bottom: 1px solid #000;
+    }
+}

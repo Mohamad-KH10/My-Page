@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim Sayfası</title>
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/Navbar.css">
+    <link rel="stylesheet" href="./Css/iletisim.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white fixed-top">
+        <a class="navbar-brand center" href="index.html">Kişisel Web Sayfam</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-2"><a class="nav-link text-active" href="login.html" target="_self">Login</a></li>
+                    <li class="nav-item px-2"><a class="nav-link text-white" href="index.html" target="_self">Hakkımda</a></li>
+                    <li class="nav-item px-2"><a class="nav-link text-white" href="ozgecmis.html" target="_self">Özgeçmiş</a></li>
+                    <li class="nav-item px-2"><a class="nav-link text-white" href="sehrim.html" target="_self">Şehrim</a></li>
+                    <li class="nav-item px-2"><a class="nav-link text-white" href="mirasimiz.html" target="_self">Mirasımız</a></li>
+                    <li class="nav-item px-2"><a class="nav-link text-white" href="ilgialanlarim.html" target="_self">İlgi Alanlarım</a></li>
+                    <li class="nav-item px-2"><a class="nav-link text-active" href="iletisim.html" target="_self">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="site-section bg-light" id="app">
+        <div class="container mb-7">
+            <div class="row">
+                <div class="col-md-12 mb-7">
+                    <div class="section-heading text-center">
+                        <h1 class="text-muted mt-3">İLETİŞİM</h1>
+                        <form action="iletisim.php" method="POST" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <div class="row mt-4">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                        <input v-model="form.ad" class="form-control" type="text" placeholder="Adınız..." name="ad">
+                                        <span class="text-danger" v-if="errors.ad">{{ errors.ad }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row mt-3">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                        <input v-model="form.soyad" class="form-control" placeholder="Soyadınız..." type="text" name="soyad">
+                                        <span class="text-danger" v-if="errors.soyad">{{ errors.soyad }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row mt-4">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                        <input v-model="form.dogum" class="form-control" type="text" placeholder="Doğum Tarihiniz..." name="dogum">
+                                        <span class="text-danger" v-if="errors.dogum">{{ errors.dogum }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                        <select v-model="form.egitim" class="form-control" name="egitim">
+                                            <option value="" disabled>Eğitim Seviyesi Seçiniz</option>
+                                            <option>İlkokul</option>
+                                            <option>Ortaokul</option>
+                                            <option>Lise</option>
+                                            <option>Üniversite</option>
+                                        </select>
+                                        <span class="text-danger" v-if="errors.egitim">{{ errors.egitim }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row mt-4">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                        <input v-model="form.email" class="form-control" placeholder="Email Adresiniz..." type="text" name="email">
+                                        <span class="text-danger" v-if="errors.email">{{ errors.email }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row mt-4">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5">
+                                        <textarea v-model="form.mesaj" class="form-control" rows="5" name="mesaj" placeholder="Mesajınız..."></textarea>
+                                        <span class="text-danger" v-if="errors.mesaj">{{ errors.mesaj }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row mt-4">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-5 gender">
+                                        <input v-model="form.cinsiyet" class="mx-1" type="radio" name="cinsiyet" value="Erkek"><strong>Erkek</strong>
+                                        <input v-model="form.cinsiyet" class="mx-1" type="radio" name="cinsiyet" value="Kadın"><strong>Kadın</strong>
+                                        <span class="text-danger" v-if="errors.cinsiyet">{{ errors.cinsiyet }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 buttons">
+                                <div class="col-md-3"></div>
+                                <button class="btn btn-danger" type="reset">Temizle
+</button>
+                                <div class="mx-2"></div>
+                                <button class="btn btn-success" type="button" @click="submitForm">Vue.js ile Gönder</button>
+                                <div class="mx-2"></div>
+                                <button class="btn btn-info" type="button" onclick="submitWithJS()">JavaScript ile Gönder</button>
+                            </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="container-fluid padding">
+                    <div class="row text-center">
+                        <div class="col-md-12">Mohamad Khateeb</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    form: {
+                        ad: '',
+                        soyad: '',
+                        dogum:'',
+                        egitim: '',
+                        email: '',
+                        mesaj: '',
+                        cinsiyet: ''
+                    },
+                    errors: {}
+                }
+            },
+           methods: {
+                validateForm() {
+                    this.errors = {};
+                    if (!this.form.ad) this.errors.ad = 'Adınızı giriniz.';
+                    if (!this.form.soyad) this.errors.soyad = 'Soyadınızı giriniz.';
+                    if (!this.form.dogum) this.errors.dogum = 'Doğum tarihini giriniz.';
+                    if (!this.form.egitim) this.errors.egitim = 'Eğitim seviyesi seçiniz.';
+                    if (!this.form.email) {
+                        this.errors.email = 'Email adresinizi giriniz.';
+                    } else if (!this.validateEmail(this.form.email)) {
+                        this.errors.email = 'Geçerli bir email adresi giriniz.';
+                    }
+                    if (!this.form.mesaj) this.errors.mesaj = 'Mesajınızı giriniz.';
+                    if (!this.form.cinsiyet) this.errors.cinsiyet = 'Cinsiyet seçiniz.';
+
+                    if (Object.keys(this.errors).length === 0) {
+                        alert("Form doğru şekilde doldurulmuş!");
+                    }
+                },
+                validateEmail(email) {
+                    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(String(email).toLowerCase());
+                },
+                submitForm() {
+                    this.validateForm();
+                    if (Object.keys(this.errors).length === 0) {
+                        document.getElementById("contactForm").submit();
+                        alert("Form başarıyla gönderildi!");
+                    } else {
+                        alert("Lütfen formdaki hataları düzeltin.");
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        function validateWithJS() {
+            const form = document.forms['contactForm'];
+            let errors = {};
+
+            if (!form['ad'].value) errors.ad = 'Adınızı giriniz.';
+            if (!form['soyad'].value) errors.soyad = 'Soyadınızı giriniz.';
+            if (!form['dogum'].value) errors.dogum = 'Doğum tarihini giriniz.';
+            if (!form['egitim'].value) errors.egitim = 'Eğitim seviyesi seçiniz.';
+            if (!form['email'].value) {
+                errors.email = 'Email adresinizi giriniz.';
+            } else if (!validateEmail(form['email'].value)) {
+                errors.email = 'Geçerli bir email adresi giriniz.';
+            }
+            if (!form['mesaj'].value) errors.mesaj = 'Mesajınızı giriniz.';
+            if (!form['cinsiyet'].value) errors.cinsiyet = 'Cinsiyet seçiniz.';
+
+            for (const [key, value] of Object.entries(errors)) {
+                const errorElement = document.createElement('span');
+                errorElement.className = 'text-danger';
+                errorElement.textContent = value;
+               
+                if (form[key].nextSibling) {
+                    form[key].nextSibling.remove();
+                }
+                form[key].parentNode.appendChild(errorElement);
+            }
+
+            if (Object.keys(errors).length === 0) {
+                alert("Form doğru şekilde doldurulmuş!");
+            }
+        }
+
+        function submitWithJS() {
+            validateWithJS();
+            const errors = document.querySelectorAll('.text-danger');
+            if (errors.length === 0) {
+                document.getElementById("contactForm").submit();
+                alert("Form başarıyla gönderildi!");
+            } else {
+                alert("Lütfen formdaki hataları düzeltin.");
+            }
+        }
+
+        function validateEmail(email) {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".navbar-toggler").addEventListener("click", function () {
+                document.querySelector(".navbar-collapse").classList.toggle("show");
+            });
+        });
+    </script>
+</body>
+
+</html>
+

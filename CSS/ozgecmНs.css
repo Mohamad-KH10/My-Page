@@ -1,0 +1,74 @@
+table {
+    width: 650px !important;
+    height: 400px;
+    margin-top: 2rem;
+}
+
+table tbody {
+    border: rgb(240, 240, 240) solid 1px;
+    border-radius: 8px;
+}
+
+table tr td {
+    border-left: 1px solid rgb(243, 242, 242)
+}
+
+table tr th {
+    border: none;
+    border-bottom: rgb(240, 240, 240) solid 1px;
+}
+
+table tbody tr th {
+    font-size: 0.9rem;
+    color: #013220;
+}
+
+table td {
+    font-size: 0.9rem;
+    font-family: 'Sawarabi Mincho', serif;
+    color: rgb(116, 116, 116);
+}
+
+table td a {
+    color: rgb(0, 94, 142);
+    text-decoration: underline;
+}
+
+table tr td div {
+    margin-bottom: 10px;
+}
+
+table tr td div span {
+    margin: 0 10px;
+}
+
+.profıle {
+    height: 370px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-link:nth-child(odd) {
+        background-color: #28a745;
+        color: #fff !important;
+        border-bottom: 1px solid #000;
+    }
+
+    .nav-link:nth-child(even) {
+        background-color: #ffc107;
+        color: #000 !important;
+        border-bottom: 1px solid #000;
+    }
+}
